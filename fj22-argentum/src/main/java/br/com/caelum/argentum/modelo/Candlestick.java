@@ -1,17 +1,18 @@
 package br.com.caelum.argentum.modelo;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public final class Candlestick {
-	private final double abertura;
-	private final double fechamento;
-	private final double minimo;
-	private final double maximo;
-	private final double volume;
+	private final BigDecimal abertura;
+	private final BigDecimal fechamento;
+	private final BigDecimal minimo;
+	private final BigDecimal maximo;
+	private final BigDecimal volume;
 	private final Calendar data;
 	
-	public Candlestick(double abertura, double fechamento, double minimo, double maximo, double volume, Calendar data) {
+	public Candlestick(BigDecimal abertura, BigDecimal fechamento, BigDecimal minimo, BigDecimal maximo, BigDecimal volume, Calendar data) {
 		this.abertura = abertura;
 		this.fechamento = fechamento;
 		this.minimo = minimo;
@@ -20,23 +21,23 @@ public final class Candlestick {
 		this.data = data;
 	}
 
-	public double getAbertura() {
+	public BigDecimal getAbertura() {
 		return abertura;
 	}
 
-	public double getFechamento() {
+	public BigDecimal getFechamento() {
 		return fechamento;
 	}
 
-	public double getMinimo() {
+	public BigDecimal getMinimo() {
 		return minimo;
 	}
 
-	public double getMaximo() {
+	public BigDecimal getMaximo() {
 		return maximo;
 	}
 
-	public double getVolume() {
+	public BigDecimal getVolume() {
 		return volume;
 	}
 
@@ -49,16 +50,16 @@ public final class Candlestick {
 	}
 	
 	public boolean isAlta() {
-		return this.abertura < this.fechamento;
+		return (this.abertura.compareTo(this.fechamento) > 0) ? true : false;
 	}
 	
 	public boolean isBaixa() {
-		return this.abertura > this.fechamento;
+		return (this.fechamento.compareTo(this.abertura) > 0) ? true : false;
 	}
 
 	@Override
 	public String toString() {
 		return "Candlestick [Abertura=" + abertura + ", Fechamento=" + fechamento + ", Mínimo=" + minimo + ", Máximo="
-				+ maximo + ", Volume=" + volume + ", data=" + getDataFormatada() + "]";	
+				+ maximo + ", Volume=" + volume.toString() + ", data=" + getDataFormatada() + "]";	
 	}
 }

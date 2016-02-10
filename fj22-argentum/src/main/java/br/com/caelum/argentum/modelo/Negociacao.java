@@ -1,23 +1,24 @@
 package br.com.caelum.argentum.modelo;
 
+import java.math.BigDecimal;
 import java.util.Calendar;
 
 public class Negociacao {
-	private final double preco;
-	private final int quantidade;
+	private final BigDecimal preco;
+	private final BigDecimal quantidade;
 	private final Calendar data;
 	
-	public Negociacao(double preco, int quantidade, Calendar data) {
-		this.preco = preco;
-		this.quantidade = quantidade;
+	public Negociacao(BigDecimal d, BigDecimal i, Calendar data) {
+		this.preco = d;
+		this.quantidade = i;
 		this.data = data;
 	}
 
-	public double getPreco() {
+	public BigDecimal getPreco() {
 		return preco;
 	}
 
-	public int getQuantidade() {
+	public BigDecimal getQuantidade() {
 		return quantidade;
 	}
 
@@ -25,7 +26,7 @@ public class Negociacao {
 		return data;
 	}
 	
-	public double getVolume() {
-		return preco * quantidade; 
+	public BigDecimal getVolume() {
+		return preco.multiply(quantidade); 
 	}
 }
