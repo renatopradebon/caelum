@@ -3,8 +3,10 @@ package br.com.caelum.argentum.testes;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
+import br.com.caelum.argentum.modelo.CandleBuilder;
 import br.com.caelum.argentum.modelo.Candlestick;
 import br.com.caelum.argentum.modelo.CandlestickFactory;
 import br.com.caelum.argentum.modelo.Negociacao;
@@ -29,7 +31,7 @@ public class TestaCandlestickFactory {
 		
 		CandlestickFactory fabrica = new CandlestickFactory();
 		Candlestick candle = fabrica.constroiCandleParaData(hoje, negociacoes);
-		
+				
 		System.out.println(candle);
 	}
 
