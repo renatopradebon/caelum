@@ -1,65 +1,65 @@
 package br.com.caelum.argentum.modelo;
 
-import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public final class Candlestick {
-	private final BigDecimal abertura;
-	private final BigDecimal fechamento;
-	private final BigDecimal minimo;
-	private final BigDecimal maximo;
-	private final BigDecimal volume;
+public class Candlestick {
+		
+	private final double abertura;
+	private final double fechamento;
+	private final double minimo;
+	private final double maximo;
+	private final double volume;
 	private final Calendar data;
 	
-	public Candlestick(BigDecimal abertura, BigDecimal fechamento, BigDecimal minimo, BigDecimal maximo, BigDecimal volume, Calendar data) {
+	public Candlestick(double abertura, double fechamento, double minimo, double maximo, double volume, Calendar data) {
 		this.abertura = abertura;
 		this.fechamento = fechamento;
 		this.minimo = minimo;
 		this.maximo = maximo;
 		this.volume = volume;
 		this.data = data;
-	}
-
-	public BigDecimal getAbertura() {
+	}	
+	
+	public double getAbertura() {
 		return abertura;
 	}
 
-	public BigDecimal getFechamento() {
+	public double getFechamento() {
 		return fechamento;
 	}
 
-	public BigDecimal getMinimo() {
+	public double getMinimo() {
 		return minimo;
 	}
 
-	public BigDecimal getMaximo() {
+	public double getMaximo() {
 		return maximo;
 	}
 
-	public BigDecimal getVolume() {
+	public double getVolume() {
 		return volume;
 	}
 
 	public Calendar getData() {
 		return data;
 	}
+
+	public boolean isAlta() {
+		return this.abertura < this.fechamento;
+	}
+	
+	public boolean isBaixa() {
+		return this.abertura > this.fechamento;
+	}
 	
 	public String getDataFormatada() {			
 		return new SimpleDateFormat("dd/MM/yyyy").format(getData().getTime());			
 	}
 	
-	public boolean isAlta() {
-		return (this.abertura.compareTo(this.fechamento) > 0) ? true : false;
-	}
-	
-	public boolean isBaixa() {
-		return (this.fechamento.compareTo(this.abertura) > 0) ? true : false;
-	}
-
 	@Override
 	public String toString() {
 		return "Candlestick [Abertura=" + abertura + ", Fechamento=" + fechamento + ", Mínimo=" + minimo + ", Máximo="
-				+ maximo + ", Volume=" + volume.toString() + ", data=" + getDataFormatada() + "]";	
+				+ maximo + ", Volume=" + volume + ", data=" + getDataFormatada() + "]";	
 	}
 }
