@@ -6,9 +6,9 @@ import java.util.List;
 public class CandlestickFactory {
 
 	public Candlestick constroiCandleParaData(Calendar data, List<Negociacao> negociacoes) {
-		double maximo = 0;
-		double minimo = Double.MAX_VALUE;
-
+		
+		double minimo = negociacoes.isEmpty() ? 0 : Double.MAX_VALUE;
+		double maximo = 0;		
 		double volume = 0;
 
 		for (Negociacao negociacao : negociacoes) {
@@ -17,7 +17,9 @@ public class CandlestickFactory {
 
 			if (negociacao.getPreco() > maximo) {
 				maximo = negociacao.getPreco();
-			} else if (negociacao.getPreco() < minimo) {
+			}
+			
+			if (negociacao.getPreco() < minimo) {
 				minimo = negociacao.getPreco();
 			}			
 		} 

@@ -8,9 +8,14 @@ public final class Negociacao {
 	private final Calendar data;
 	
 	public Negociacao(double preco, int quantidade, Calendar data) {
+		// adiciona uma exceção quando a data for nula
+		if(data == null) {
+			throw new IllegalArgumentException("Data não pode ser nula.");
+		}
+		
 		this.preco = preco;
 		this.quantidade = quantidade;
-		this.data = data;
+		this.data = data;				
 	}
 
 	public double getPreco() {
@@ -22,7 +27,8 @@ public final class Negociacao {
 	}
 
 	public Calendar getData() {
-		return data;
+		// retorna um clone do atributo para que ele seja imutavel
+		return (Calendar) this.data.clone();
 	} 
 	
 	public double getVolume() {
