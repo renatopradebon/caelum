@@ -1,6 +1,10 @@
 package br.com.caelum.argentum.modelo;
 import java.util.Calendar;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+
+@XStreamAlias("negociacao")
 public final class Negociacao {
 	
 	private final double preco;
@@ -8,9 +12,16 @@ public final class Negociacao {
 	private final Calendar data;
 	
 	public Negociacao(double preco, int quantidade, Calendar data) {
-		// adiciona uma exceção quando a data for nula
 		if(data == null) {
 			throw new IllegalArgumentException("Data não pode ser nula.");
+		}
+		
+		if(preco <= 0) {
+			throw new IllegalArgumentException("Preço deve ser maior que zero.");
+		}
+		
+		if(quantidade <= 0) {
+			throw new IllegalArgumentException("Quantidade deve ser maior que zero.");
 		}
 		
 		this.preco = preco;
@@ -34,4 +45,9 @@ public final class Negociacao {
 	public double getVolume() {
 		return preco * quantidade;
 	}
+
+	@Override
+	public String toString() {
+		return "Negociacao [preco=" + preco + ", quantidade=" + quantidade + ", data=" + data + "]";
+	}		
 }
