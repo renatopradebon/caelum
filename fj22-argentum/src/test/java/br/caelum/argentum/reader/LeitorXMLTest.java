@@ -52,7 +52,7 @@ public class LeitorXMLTest {
 		Assert.assertTrue("lista vazia", negociacoes.isEmpty());		
 	}
 	
-	@Test
+	@Test(expected=IllegalArgumentException.class)
 	public void carregaXmlComPrecoNulo() {
 	
 		String xmlDeTeste = "<list>" +
@@ -70,7 +70,6 @@ public class LeitorXMLTest {
 		
 		List<Negociacao> negociacoes = leitor.carrega(xml);
 		System.out.println(negociacoes.toString());
-		
-		assertEquals(0, negociacoes.size());
+//		assertEquals(0, negociacoes.size());
 	}
 }

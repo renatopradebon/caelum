@@ -1,4 +1,5 @@
 package br.com.caelum.argentum.modelo;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -15,7 +16,7 @@ public final class Negociacao {
 		if(data == null) {
 			throw new IllegalArgumentException("Data não pode ser nula.");
 		}
-		
+
 		if(preco <= 0) {
 			throw new IllegalArgumentException("Preço deve ser maior que zero.");
 		}
@@ -48,6 +49,8 @@ public final class Negociacao {
 
 	@Override
 	public String toString() {
-		return "Negociacao [preco=" + preco + ", quantidade=" + quantidade + ", data=" + data + "]";
+		return "Negociacao [preco=" + preco + 
+					", quantidade=" + quantidade + 
+					", data=" + new SimpleDateFormat("dd/MM/yyyy").format(data) + "]";
 	}		
 }
