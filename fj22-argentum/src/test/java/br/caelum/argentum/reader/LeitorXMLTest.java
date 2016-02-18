@@ -1,10 +1,7 @@
 package br.caelum.argentum.reader;
 
-import static org.junit.Assert.*;
-
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.util.Calendar;
 import java.util.List;
 
 import org.junit.Test;
