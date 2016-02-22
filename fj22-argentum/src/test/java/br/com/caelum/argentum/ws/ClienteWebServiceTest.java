@@ -1,0 +1,28 @@
+package br.com.caelum.argentum.ws;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+import java.util.List;
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
+
+import br.caelum.argentum.reader.LeitorXML;
+import br.com.caelum.argentum.modelo.Negociacao;
+
+
+public class ClienteWebServiceTest {
+
+	public static void main(String[] args) throws FileNotFoundException {		
+		
+		List<Negociacao> negociacoes = new ClienteWebService().getNegociacoes();
+		
+		XStream stream = new XStream(new DomDriver());
+		stream.alias("negociacao", Negociacao.class);
+		stream.setMode(XStream.NO_REFERENCES);
+
+		PrintStream out = new PrintStream(new File("negociacao3.xml"));
+		out.println(stream.toXML(negociacoes));		
+	}
+}
