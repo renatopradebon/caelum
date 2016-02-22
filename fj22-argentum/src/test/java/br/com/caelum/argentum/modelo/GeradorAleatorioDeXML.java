@@ -46,7 +46,7 @@ public class GeradorAleatorioDeXML {
 		stream.alias("negociacao", Negociacao.class);
 		stream.setMode(XStream.NO_REFERENCES);
 
-		PrintStream out = new PrintStream(new File("negociacao.xml"));
+		PrintStream out = new PrintStream(new File("xml/negociacao.xml"));
 		out.println(stream.toXML(negociacoes));
 	}
 }

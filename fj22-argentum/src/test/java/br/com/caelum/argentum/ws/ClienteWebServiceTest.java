@@ -22,7 +22,7 @@ public class ClienteWebServiceTest {
 		stream.alias("negociacao", Negociacao.class);
 		stream.setMode(XStream.NO_REFERENCES);
 
-		PrintStream out = new PrintStream(new File("negociacao3.xml"));
-		out.println(stream.toXML(negociacoes));		
+		PrintStream out = new PrintStream(new File(System.getProperty("user.dir") + "/src/test/xml/negociacao3.xml"));
+		out.println(stream.toXML(negociacoes));
 	}
 }
