@@ -6,8 +6,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
-import br.caelum.argentum.reader.LeitorXML;
 import br.com.caelum.argentum.modelo.Negociacao;
+import br.com.caelum.argentum.reader.LeitorXML;
 
 public class ClienteWebService {
 	

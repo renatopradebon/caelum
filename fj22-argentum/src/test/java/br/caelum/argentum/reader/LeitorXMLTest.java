@@ -7,6 +7,7 @@ import java.util.List;
 import org.junit.Test;
 
 import br.com.caelum.argentum.modelo.Negociacao;
+import br.com.caelum.argentum.reader.LeitorXML;
 import junit.framework.Assert;
 
 public class LeitorXMLTest {

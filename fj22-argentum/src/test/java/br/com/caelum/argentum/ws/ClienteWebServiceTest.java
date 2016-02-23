@@ -8,8 +8,8 @@ import java.util.List;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
-import br.caelum.argentum.reader.LeitorXML;
 import br.com.caelum.argentum.modelo.Negociacao;
+import br.com.caelum.argentum.reader.LeitorXML;
 
 
 public class ClienteWebServiceTest {

@@ -1,4 +1,4 @@
-package br.caelum.argentum.reader;
+package br.com.caelum.argentum.reader;
 
 import java.io.InputStream;
 import java.util.List;

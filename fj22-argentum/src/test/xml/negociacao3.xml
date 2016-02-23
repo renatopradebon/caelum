@@ -1,37 +1,5 @@
 <list>
   <negociacao>
-    <preco>278.27</preco>
-    <quantidade>16</quantidade>
-    <data>
-      <time>1450742400000</time>
-      <timezone>Etc/UTC</timezone>
-    </data>
-  </negociacao>
-  <negociacao>
-    <preco>246.1</preco>
-    <quantidade>14</quantidade>
-    <data>
-      <time>1450742400000</time>
-      <timezone>Etc/UTC</timezone>
-    </data>
-  </negociacao>
-  <negociacao>
-    <preco>370.85</preco>
-    <quantidade>21</quantidade>
-    <data>
-      <time>1450742400000</time>
-      <timezone>Etc/UTC</timezone>
-    </data>
-  </negociacao>
-  <negociacao>
-    <preco>382.91</preco>
-    <quantidade>22</quantidade>
-    <data>
-      <time>1450742400000</time>
-      <timezone>Etc/UTC</timezone>
-    </data>
-  </negociacao>
-  <negociacao>
     <preco>321.57</preco>
     <quantidade>18</quantidade>
     <data>
@@ -1980,6 +1948,38 @@
     <quantidade>24</quantidade>
     <data>
       <time>1456012800000</time>
+      <timezone>Etc/UTC</timezone>
+    </data>
+  </negociacao>
+  <negociacao>
+    <preco>257.53</preco>
+    <quantidade>15</quantidade>
+    <data>
+      <time>1456099200000</time>
+      <timezone>Etc/UTC</timezone>
+    </data>
+  </negociacao>
+  <negociacao>
+    <preco>304.61</preco>
+    <quantidade>17</quantidade>
+    <data>
+      <time>1456099200000</time>
+      <timezone>Etc/UTC</timezone>
+    </data>
+  </negociacao>
+  <negociacao>
+    <preco>422.54</preco>
+    <quantidade>24</quantidade>
+    <data>
+      <time>1456099200000</time>
+      <timezone>Etc/UTC</timezone>
+    </data>
+  </negociacao>
+  <negociacao>
+    <preco>249.65</preco>
+    <quantidade>14</quantidade>
+    <data>
+      <time>1456099200000</time>
       <timezone>Etc/UTC</timezone>
     </data>
   </negociacao>
