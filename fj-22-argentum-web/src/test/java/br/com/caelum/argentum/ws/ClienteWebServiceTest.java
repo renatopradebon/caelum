@@ -9,7 +9,6 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
 import br.com.caelum.argentum.modelo.Negociacao;
-import br.com.caelum.argentum.reader.LeitorXML;
 
 
 public class ClienteWebServiceTest {

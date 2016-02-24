@@ -1,4 +1,5 @@
 package br.com.caelum.argentum.modelo;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -6,7 +7,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 
 @XStreamAlias("negociacao")
-public final class Negociacao {
+public final class Negociacao implements Serializable{
 	
 	private final double preco;
 	private final int quantidade;

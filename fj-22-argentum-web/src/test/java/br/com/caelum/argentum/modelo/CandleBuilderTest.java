@@ -1,9 +1,5 @@
 package br.com.caelum.argentum.modelo;
 
-import static org.junit.Assert.*;
-
-import java.util.Calendar;
-
 import org.junit.Test;
 
 public class CandleBuilderTest {
