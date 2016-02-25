@@ -9,6 +9,7 @@ import junit.framework.Assert;
 
 public class NegociacaoTest {
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void dataDaNegociacaoEhImutavel() {
 		// se criar um negocio no dia 15...

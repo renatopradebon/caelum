@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import junit.framework.Assert;
 
+@SuppressWarnings("deprecation")
 public class CandlestickTest {
 
 	@Test(expected=IllegalArgumentException.class)
