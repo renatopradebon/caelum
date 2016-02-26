@@ -4,11 +4,11 @@ import java.util.Calendar;
 
 import org.junit.Test;
 
-public class CandlestickFactoryBuilderTest {
+public class CandleFactoryBuilderTest {
 
 	@Test
 	public void geracaoDeCandleDeveTerTodosOsDadosNecessarios() {
-		new Candlestick(10.0, 20.0, 20.0, 10.0, 10000.0, Calendar.getInstance());
+		new Candle(10.0, 20.0, 20.0, 10.0, 10000.0, Calendar.getInstance());
 	}
 
 }

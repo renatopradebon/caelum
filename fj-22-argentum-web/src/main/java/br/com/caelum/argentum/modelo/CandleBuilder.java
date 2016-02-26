@@ -69,12 +69,12 @@ public class CandleBuilder {
 				&& chamouMinimo && chamouVolume ? true : false;
 	}
 	
-	public Candlestick geraCandle() { 
+	public Candle geraCandle() { 
 		
 		if (verificaSeChamouTodosOsMetodos() == false) {			
 			throw new IllegalStateException("Obrigatório passar todos os parâmetros.");
 		} else {
-			return new Candlestick(abertura, fechamento, minimo, maximo,
+			return new Candle(abertura, fechamento, minimo, maximo,
 					volume, data);
 		}
 	}

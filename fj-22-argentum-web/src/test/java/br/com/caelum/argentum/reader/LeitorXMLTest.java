@@ -1,4 +1,4 @@
-package br.caelum.argentum.reader;
+package br.com.caelum.argentum.reader;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -10,6 +10,7 @@ import br.com.caelum.argentum.modelo.Negociacao;
 import br.com.caelum.argentum.reader.LeitorXML;
 import junit.framework.Assert;
 
+@SuppressWarnings("deprecation")
 public class LeitorXMLTest {
 
 	@Test

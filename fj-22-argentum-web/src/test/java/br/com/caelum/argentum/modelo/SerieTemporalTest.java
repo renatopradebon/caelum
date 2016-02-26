@@ -4,10 +4,8 @@ import org.junit.Test;
 
 public class SerieTemporalTest {
 
-	@Test
-	public void TestaClasseNula() {
-		
-	}
-	
-
+	@Test(expected=IllegalArgumentException.class)
+	public void TestaClasseNula() {		
+		new SerieTemporal(null);		
+	}	
 }

@@ -3,7 +3,7 @@ package br.com.caelum.argentum.modelo;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Candlestick {
+public class Candle {
 		
 	private final double abertura;
 	private final double fechamento;
@@ -12,7 +12,7 @@ public class Candlestick {
 	private final double volume;
 	private final Calendar data;
 	
-	public Candlestick(double abertura, double fechamento, double minimo, double maximo, double volume, Calendar data) {
+	public Candle(double abertura, double fechamento, double minimo, double maximo, double volume, Calendar data) {
 		
 		// valida para o valor maximo nao ser maior que o minimo
 		if(minimo > maximo) {
