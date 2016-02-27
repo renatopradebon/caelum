@@ -10,7 +10,7 @@ public class MediaMovelPonderadaTest {
 	@Test
 	public void sequenciaSimplesDeCandlesComTresDias() {
 		SerieTemporal serie = GeradorDeSerie.criaSerie(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-		MediaMovelPonderada mmp = new MediaMovelPonderada(3);
+		MediaMovelPonderada mmp = new MediaMovelPonderada(3, new IndicadorAbertura());
 		
 		// ex: calcula(2): 1*1 + 2*2 +3*3 = 14. Divide por 6, da 14/6
 		Assert.assertEquals(14.0 / 6, mmp.calcula(2, serie), 0.00001);				
@@ -22,7 +22,7 @@ public class MediaMovelPonderadaTest {
 	@Test
 	public void sequenciaSimplesDeCandlesComCincoDias() {
 		SerieTemporal serie = GeradorDeSerie.criaSerie(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-		MediaMovelPonderada mmp = new MediaMovelPonderada(5);
+		MediaMovelPonderada mmp = new MediaMovelPonderada(5, new IndicadorFechamento());
 		
 		// ex: calcula(2): 1*1 + 2*2 +3*3 = 14. Divide por 6, da 14/6
 		Assert.assertEquals(55.0 / 15, mmp.calcula(4, serie), 0.00001);				

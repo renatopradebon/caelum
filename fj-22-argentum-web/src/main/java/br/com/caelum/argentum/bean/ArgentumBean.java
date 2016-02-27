@@ -32,11 +32,11 @@ public class ArgentumBean implements Serializable {
 		List<Candle> candles = new CandleFactory().constroiCandles(negociacoes);
 		SerieTemporal serie = new SerieTemporal(candles);
 		
-		GeradorModeloGrafico geradorGrafico = new GeradorModeloGrafico(serie, 2, serie.getUltimaPosicao());
-		geradorGrafico.plotaIndicador(new MediaMovelSimples(3));
-		geradorGrafico.plotaIndicador(new MediaMovelPonderada(3));
-		geradorGrafico.plotaIndicador(new IndicadorAbertura());
-		geradorGrafico.plotaIndicador(new IndicadorFechamento());
+		GeradorModeloGrafico geradorGrafico = new GeradorModeloGrafico(serie, 7, serie.getUltimaPosicao());
+		geradorGrafico.plotaIndicador(new MediaMovelSimples(5, new IndicadorFechamento()));
+//		geradorGrafico.plotaIndicador(new MediaMovelPonderada(3));
+//		geradorGrafico.plotaIndicador(new IndicadorAbertura());
+//		geradorGrafico.plotaIndicador(new IndicadorFechamento());
 		
 		this.modeloGrafico = geradorGrafico.getModeloGrafico();
 	}
