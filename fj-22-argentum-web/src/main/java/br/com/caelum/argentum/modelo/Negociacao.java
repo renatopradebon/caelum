@@ -42,7 +42,11 @@ public final class Negociacao implements Serializable{
 	public Calendar getData() {
 		// retorna um clone do atributo para que ele seja imutavel
 		return (Calendar) this.data.clone();
-	} 
+	}
+	
+	public String getDataFormatada() {
+		return data == null ? null : new SimpleDateFormat("dd/MM/yyyy").format(data);
+	}
 	
 	public double getVolume() {
 		return preco * quantidade;
@@ -50,9 +54,10 @@ public final class Negociacao implements Serializable{
 
 	@Override
 	public String toString() {
+		// precisa refatorar o retorno da data, pois  está retonarndo NPE
 		return "Negociacao [preco=" + preco + 
 					", quantidade=" + quantidade + 
-					", data=" + new SimpleDateFormat("dd/MM/yyyy").format(data) + "]";
+					", data=" + data + "]";
 	}
 
 	public boolean isMesmoDia(Calendar outraData) {		

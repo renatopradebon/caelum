@@ -6,8 +6,9 @@ import org.junit.Test;
 
 public class TesteGeralTest {
 
-	@Test
 	public void test() {
+		// FALTA IMPLEMENTAR
+		// A ideia é que esse método execute todos os testes
 		
 	}
 
