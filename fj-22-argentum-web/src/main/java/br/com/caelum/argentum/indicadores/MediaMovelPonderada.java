@@ -19,7 +19,7 @@ public class MediaMovelPonderada implements Indicador {
 		int somaPeso = 0;
 		
 		for (int i = posicao; i > (posicao - intervalo); i--) {					
-			soma += outroIndicador.calcula(posicao, serie) * peso;
+			soma += outroIndicador.calcula(i, serie) * peso;
 			somaPeso += peso;
 			peso--;			
 		}

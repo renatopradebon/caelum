@@ -26,7 +26,7 @@ public class MediaMovelSimplesTest {
 	public void sequenciaSimplesDeCandlesComCincoDias() throws Exception {
 		SerieTemporal serie = GeradorDeSerie.criaSerie(1, 2, 3, 4, 3, 4, 5, 4, 3, 4, 3);
 		
-		Indicador mms = new MediaMovelSimples(5, new IndicadorFechamento());
+		Indicador mms = new MediaMovelSimples(5, new IndicadorAbertura());
 
 		Assert.assertEquals(13.0 / 5, mms.calcula(4, serie), 0.00001);
 		Assert.assertEquals(16.0 / 5, mms.calcula(5, serie), 0.00001);

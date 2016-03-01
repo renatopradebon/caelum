@@ -34,9 +34,9 @@ public class ArgentumBean implements Serializable {
 		
 		GeradorModeloGrafico geradorGrafico = new GeradorModeloGrafico(serie, 7, serie.getUltimaPosicao());
 		geradorGrafico.plotaIndicador(new MediaMovelSimples(5, new IndicadorFechamento()));
-//		geradorGrafico.plotaIndicador(new MediaMovelPonderada(3));
-//		geradorGrafico.plotaIndicador(new IndicadorAbertura());
-//		geradorGrafico.plotaIndicador(new IndicadorFechamento());
+		geradorGrafico.plotaIndicador(new MediaMovelPonderada(3, new IndicadorAbertura()));
+		geradorGrafico.plotaIndicador(new IndicadorAbertura());
+		geradorGrafico.plotaIndicador(new IndicadorFechamento());
 		
 		this.modeloGrafico = geradorGrafico.getModeloGrafico();
 	}
