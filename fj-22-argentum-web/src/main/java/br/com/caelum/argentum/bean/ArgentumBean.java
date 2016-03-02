@@ -18,6 +18,7 @@ import br.com.caelum.argentum.modelo.CandleFactory;
 import br.com.caelum.argentum.modelo.Negociacao;
 import br.com.caelum.argentum.modelo.SerieTemporal;
 import br.com.caelum.argentum.ws.ClienteWebService;
+import sun.invoke.empty.Empty;
 
 @ManagedBean
 @ViewScoped
@@ -55,7 +56,7 @@ public class ArgentumBean implements Serializable {
 	private Indicador defineIndicador()  {
 		Integer intervalo = 3;
 		 
-		if (verificaAtributosNulos()) {
+		if (naoSelecionouValores()) {
 			return new MediaMovelSimples(intervalo, new IndicadorFechamento());
 		}
 		
@@ -65,7 +66,10 @@ public class ArgentumBean implements Serializable {
 			Indicador indicadorBase = (Indicador) classeIndicadorBase.newInstance();
 			
 			Class<?> classeMedia = Class.forName(pacote + nomeMedia);
-			Constructor<?> construtorMedia = classeMedia.getConstructor(Indicador.class);		
+			
+			Constructor<?> construtorMedia = classeMedia.getConstructor(Indicador.class);
+			
+			System.out.println(construtorMedia.getParameterTypes());
 			
 			Indicador indicador = (Indicador) construtorMedia.newInstance(intervalo, indicadorBase);			
 			
@@ -75,8 +79,9 @@ public class ArgentumBean implements Serializable {
 		}		
 	}
 
-	public boolean verificaAtributosNulos() {
-		return (nomeIndicadorBase == null) || (nomeMedia == null);
+	public boolean naoSelecionouValores() {
+		return (nomeIndicadorBase == null) || (nomeMedia == null) || 
+			   (nomeIndicadorBase.isEmpty()) || (nomeMedia.isEmpty());
 	}
 
 	public ChartModel getModeloGrafico() {
