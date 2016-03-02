@@ -36,19 +36,11 @@ public class ArgentumBean implements Serializable {
 	}
 
 	public void geraGrafico() {
-		System.out.println("PLOTANDO: " + nomeMedia + " de " + nomeIndicadorBase);
-		
 		List<Candle> candles = new CandleFactory().constroiCandles(negociacoes);
 		SerieTemporal serie = new SerieTemporal(candles);
 		
 		GeradorModeloGrafico geradorGrafico = new GeradorModeloGrafico(serie, 7, serie.getUltimaPosicao());
 		geradorGrafico.plotaIndicador(defineIndicador());
-		
-		//new MediaMovelSimples(5, new IndicadorFechamento())
-		
-//		geradorGrafico.plotaIndicador(new MediaMovelPonderada(3, new IndicadorAbertura()));
-//		geradorGrafico.plotaIndicador(new IndicadorAbertura());
-//		geradorGrafico.plotaIndicador(new IndicadorFechamento());
 		
 		this.modeloGrafico = geradorGrafico.getModeloGrafico();
 	}
@@ -62,15 +54,12 @@ public class ArgentumBean implements Serializable {
 		
 		try {
 			String pacote = "br.com.caelum.argentum.indicadores.";
+			
 			Class<?> classeIndicadorBase = Class.forName(pacote + nomeIndicadorBase);
 			Indicador indicadorBase = (Indicador) classeIndicadorBase.newInstance();
 			
 			Class<?> classeMedia = Class.forName(pacote + nomeMedia);
-			
-			Constructor<?> construtorMedia = classeMedia.getConstructor(Indicador.class);
-			
-			System.out.println(construtorMedia.getParameterTypes());
-			
+			Constructor<?> construtorMedia = classeMedia.getConstructor(int.class, Indicador.class);
 			Indicador indicador = (Indicador) construtorMedia.newInstance(intervalo, indicadorBase);			
 			
 			return indicador;		
