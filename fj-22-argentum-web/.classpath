@@ -24,5 +24,7 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/home/renatopradebon/git-repository/renato-git/caelum/fj-22-argentum-web/WebContent/WEB-INF/lib/primefaces-extensions-4.0.0.jar"/>
+	<classpathentry kind="lib" path="/home/renatopradebon/git-repository/renato-git/caelum/fj-22-argentum-web/WebContent/WEB-INF/lib/common-lang-0.8.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

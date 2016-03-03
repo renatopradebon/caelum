@@ -2,13 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
 <h:head>
 	<title>Argentum Web</title>
 </h:head>
 <h:body>	
 	<h:form>
-		<h:panelGrid columns="5">
+		<h:panelGrid columns="7">
+			<h:outputLabel value="Intervalo:" />
+			<pe:inputNumber value="#{argentumBean.intervalo}" id="Intervalo" minValue="1" maxValue="8">
+				<!--<f:convertNumber integerOnly="true"/>-->
+			</pe:inputNumber> 
+			
 			<h:outputLabel value="Media Móvel:" />
 			<p:selectOneButton value="#{argentumBean.nomeMedia}">
 				<f:selectItem itemLabel="Simples" itemValue="MediaMovelSimples" />
