@@ -69,6 +69,6 @@ public class LeitorXMLTest {
 		
 		List<Negociacao> negociacoes = leitor.carrega(xml);
 		System.out.println(negociacoes.toString());
-//		assertEquals(0, negociacoes.size());
+		Assert.assertEquals(0, negociacoes.size());
 	}
 }

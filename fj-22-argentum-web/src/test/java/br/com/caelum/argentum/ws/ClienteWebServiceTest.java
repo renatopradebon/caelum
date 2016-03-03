@@ -5,15 +5,18 @@ import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.List;
 
+import org.junit.Test;
+
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
 import br.com.caelum.argentum.modelo.Negociacao;
-
+import junit.framework.Assert;
 
 public class ClienteWebServiceTest {
-
-	public static void main(String[] args) throws FileNotFoundException {		
+	
+	@Test
+	public void TestXML() throws FileNotFoundException {		
 		
 		List<Negociacao> negociacoes = new ClienteWebService().getNegociacoes();
 		
@@ -21,7 +24,12 @@ public class ClienteWebServiceTest {
 		stream.alias("negociacao", Negociacao.class);
 		stream.setMode(XStream.NO_REFERENCES);
 
-		PrintStream out = new PrintStream(new File(System.getProperty("user.dir") + "/src/test/xml/negociacao3.xml"));
+		File arquivoXml = new File(System.getProperty("user.dir") + "/src/test/xml/negociacao4.xml");
+
+		PrintStream out = new PrintStream(arquivoXml);
 		out.println(stream.toXML(negociacoes));
+		
+		Assert.assertTrue(arquivoXml.length() > 0);
+		Assert.assertTrue(arquivoXml.exists());
 	}
 }

@@ -12,14 +12,15 @@ public final class Negociacao implements Serializable{
 	private final double preco;
 	private final int quantidade;
 	private final Calendar data;
+	private final double zero = 0.0;
 	
 	public Negociacao(double preco, int quantidade, Calendar data) {
 		if(data == null) {
-			throw new IllegalArgumentException("Data não pode ser nula.");
+			throw new IllegalArgumentException("Data nao pode ser nula.");
 		}
 
-		if(preco <= 0) {
-			throw new IllegalArgumentException("Preço deve ser maior que zero.");
+		if(Double.compare(preco, zero) == 0){
+			throw new IllegalArgumentException("Preco deve ser maior que zero.");
 		}
 		
 		if(quantidade <= 0) {
@@ -57,7 +58,7 @@ public final class Negociacao implements Serializable{
 		// precisa refatorar o retorno da data, pois  está retonarndo NPE
 		return "Negociacao [preco=" + preco + 
 					", quantidade=" + quantidade + 
-					", data=" + data + "]";
+					", data=" + getDataFormatada() + "]";
 	}
 
 	public boolean isMesmoDia(Calendar outraData) {		

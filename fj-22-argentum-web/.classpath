@@ -9,22 +9,10 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry exported="true" kind="lib" path="/home/renatopradebon/git-repository/renato-git/caelum/fj-22-argentum-web/WebContent/WEB-INF/lib/javax.faces-2.2.8.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
-		</attributes>
-	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="/home/renatopradebon/git-repository/renato-git/caelum/fj-22-argentum-web/WebContent/WEB-INF/lib/primefaces-5.3.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="/home/renatopradebon/git-repository/renato-git/caelum/fj-22-argentum-web/WebContent/WEB-INF/lib/xstream-1.4.8.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/home/renatopradebon/git-repository/renato-git/caelum/fj-22-argentum-web/WebContent/WEB-INF/lib/primefaces-extensions-4.0.0.jar"/>
-	<classpathentry kind="lib" path="/home/renatopradebon/git-repository/renato-git/caelum/fj-22-argentum-web/WebContent/WEB-INF/lib/common-lang-0.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Estudos/git-repository/renato-git/caelum/fj-22-argentum-web/WebContent/WEB-INF/lib/common-lang-0.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Estudos/git-repository/renato-git/caelum/fj-22-argentum-web/WebContent/WEB-INF/lib/javax.faces-2.2.8.jar"/>
+	<classpathentry kind="lib" path="C:/Estudos/git-repository/renato-git/caelum/fj-22-argentum-web/WebContent/WEB-INF/lib/primefaces-5.3.jar"/>
+	<classpathentry kind="lib" path="C:/Estudos/git-repository/renato-git/caelum/fj-22-argentum-web/WebContent/WEB-INF/lib/primefaces-extensions-4.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Estudos/git-repository/renato-git/caelum/fj-22-argentum-web/WebContent/WEB-INF/lib/xstream-1.4.8.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
