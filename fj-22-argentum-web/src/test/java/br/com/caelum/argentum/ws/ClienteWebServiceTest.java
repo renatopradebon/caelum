@@ -24,7 +24,7 @@ public class ClienteWebServiceTest {
 		stream.alias("negociacao", Negociacao.class);
 		stream.setMode(XStream.NO_REFERENCES);
 
-		File arquivoXml = new File(System.getProperty("user.dir") + "/src/test/xml/negociacao4.xml");
+		File arquivoXml = new File(System.getProperty("user.dir") + "/src/test/xml/negociacao.xml");
 
 		PrintStream out = new PrintStream(arquivoXml);
 		out.println(stream.toXML(negociacoes));
