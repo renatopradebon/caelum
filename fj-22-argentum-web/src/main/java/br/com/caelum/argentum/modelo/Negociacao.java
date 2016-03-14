@@ -9,6 +9,10 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 @XStreamAlias("negociacao")
 public final class Negociacao implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final double preco;
 	private final int quantidade;
 	private final Calendar data;
@@ -18,8 +22,8 @@ public final class Negociacao implements Serializable{
 		if(data == null) {
 			throw new IllegalArgumentException("Data nao pode ser nula.");
 		}
-
-		if(Double.compare(preco, zero) == 0){
+		
+		if(Double.compare(preco, zero) <= 0){			
 			throw new IllegalArgumentException("Preco deve ser maior que zero.");
 		}
 		
@@ -58,7 +62,7 @@ public final class Negociacao implements Serializable{
 		// precisa refatorar o retorno da data, pois  está retonarndo NPE
 		return "Negociacao [preco=" + preco + 
 					", quantidade=" + quantidade + 
-					", data=" + getDataFormatada() + "]";
+					", data=" + data + "]";
 	}
 
 	public boolean isMesmoDia(Calendar outraData) {		

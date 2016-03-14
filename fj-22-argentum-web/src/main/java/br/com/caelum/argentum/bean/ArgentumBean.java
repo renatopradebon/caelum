@@ -36,10 +36,11 @@ public class ArgentumBean implements Serializable {
 	}
 
 	public void geraGrafico() {
+		System.out.println("PLOTANDO: " + nomeMedia + " de " + nomeIndicadorBase + " e intervalo de " + intervalo);
 		List<Candle> candles = new CandleFactory().constroiCandles(negociacoes);
 		SerieTemporal serie = new SerieTemporal(candles);
 		
-		GeradorModeloGrafico geradorGrafico = new GeradorModeloGrafico(serie, 7, serie.getUltimaPosicao());
+		GeradorModeloGrafico geradorGrafico = new GeradorModeloGrafico(serie, 2, serie.getUltimaPosicao());
 		geradorGrafico.plotaIndicador(defineIndicador());
 		
 		this.modeloGrafico = geradorGrafico.getModeloGrafico();
